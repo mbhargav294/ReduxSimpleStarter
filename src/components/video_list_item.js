@@ -5,8 +5,9 @@ class VideoListItem extends Component {
     const video = this.props.video;
     const videoThumbnailUrl = video.snippet.thumbnails.default.url;
     const videoTitle = video.snippet.title;
+    console.log(video);
     return (
-      <li className="list-group-item">
+      <li onClick={() => this.props.onVideoClick(video)} className="list-group-item">
         <div className="video-list media">
           <div className="media-left">
             <img className="media-object" src={videoThumbnailUrl}/>
